@@ -5,7 +5,8 @@ import 'package:recipe_0/utilities/app_styling.dart';
 import 'package:recipe_0/widgets/rounded_container.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String, dynamic> ticket;
+  const TicketView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'NYC',
+                        ticket['from']['code'],
                         style:
                             Style.headLineStyle3.copyWith(color: Colors.white),
                       ),
@@ -61,7 +62,7 @@ class TicketView extends StatelessWidget {
                                                 color: Colors.white,
                                               ),
                                             ),
-                                        )),
+                                          )),
                                 );
                               },
                             ),
@@ -79,7 +80,7 @@ class TicketView extends StatelessWidget {
                       ),
                       const RoundedContainer(),
                       Expanded(child: Container()),
-                      Text('LDN',
+                      Text(ticket['to']['code'],
                           style: Style.headLineStyle3
                               .copyWith(color: Colors.white))
                     ],
@@ -89,15 +90,15 @@ class TicketView extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text('New-York',
+                      Text(ticket['from']['name'],
                           style: Style.headLineStyle4
                               .copyWith(color: Colors.white)),
                       const Spacer(),
-                      Text('8H 30M',
+                      Text(ticket['flying_time'],
                           style: Style.headLineStyle4
                               .copyWith(color: Colors.white)),
                       const Spacer(),
-                      Text('London',
+                      Text(ticket['to']['name'],
                           style: Style.headLineStyle4
                               .copyWith(color: Colors.white)),
                     ],
@@ -174,57 +175,58 @@ class TicketView extends StatelessWidget {
                     bottomRight: Radius.circular(21),
                   )),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '1 May',
-                          style: Style.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Date',
-                          style: Style.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          '08H00 AM',
-                          style: Style.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Departure time',
-                          style: Style.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '23',
-                          style: Style.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Number',
-                          style: Style.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ],),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        ticket['date'],
+                        style:
+                            Style.headLineStyle3.copyWith(color: Colors.white),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        'Date',
+                        style:
+                            Style.headLineStyle4.copyWith(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        ticket['departure_time'],
+                        style:
+                            Style.headLineStyle3.copyWith(color: Colors.white),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        'Departure time',
+                        style:
+                            Style.headLineStyle4.copyWith(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        ticket['ticket_number'].toString(),
+                        style:
+                            Style.headLineStyle3.copyWith(color: Colors.white),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        'Number',
+                        style:
+                            Style.headLineStyle4.copyWith(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             )
           ],
         ),
