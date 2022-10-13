@@ -1,8 +1,8 @@
 import 'dart:developer';
 
+import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_0/screens/navigator_screens/home_view.dart';
-import 'package:recipe_0/screens/tickets_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({
@@ -47,12 +47,12 @@ class _MainViewState extends State<MainView> {
           elevation: 10,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(FontAwesomeIcons.home),
               label: 'Home',
               // activeIcon: Icon(Icons.home_filled),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(FontAwesomeIcons.search),
               label: 'Search',
               // activeIcon: Icon(Icons.search_off_sharp),
             ),
