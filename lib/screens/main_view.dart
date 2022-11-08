@@ -49,7 +49,7 @@ class _MainViewState extends State<MainView> {
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.home),
               label: 'Home',
-              // activeIcon: Icon(Icons.home_filled),
+              //activeIcon: Icon(FontAwesomeIcons.home),
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.search),
