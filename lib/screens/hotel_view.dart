@@ -28,6 +28,7 @@ class HotelView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //justtesting
           Container(
             height: 180,
             decoration: BoxDecoration(
